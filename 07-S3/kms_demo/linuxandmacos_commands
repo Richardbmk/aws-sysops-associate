@@ -5,17 +5,19 @@ echo "find all the doggos, distract them with the yumz" > battleplans.txt
 # Encrypt
 
 aws kms encrypt \
+    --region us-east-1 \
     --key-id alias/catrobot \
     --plaintext fileb://battleplans.txt \
     --output text \
     --query CiphertextBlob \
-    --profile iamadmin-general | base64 \
-    --decode > not_battleplans.enc 
+    --profile general | base64 \
+    --decode > not_battleplans.enc
 
 # Decrypt
 
 aws kms decrypt \
+    --region us-east-1 \
     --ciphertext-blob fileb://not_battleplans.enc \
     --output text \
-    --profile iamadmin-general \
+    --profile general \
     --query Plaintext | base64 --decode > decryptedplans.txt

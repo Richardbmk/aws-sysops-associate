@@ -12,7 +12,7 @@ Parameters:
     Type: String
     MinLength: 4
     MaxLength: 30
-    AllowedPattern: ^[a-zA-Z0-9]*$
+    AllowedPattern: ^[a-zA-Z0-9!@#$%^&*_-]*$
 Resources:
   catpics:
     Type:  AWS::S3::Bucket
