@@ -11,7 +11,7 @@
     "Properties": {
       "KeyName": "A4L",
       "InstanceType": "t2.micro",
-      "ImageId": "ami-04d29b6f966df1537"
+      "ImageId": "ami-087c17d1fe0178315"
     }
   }
 }

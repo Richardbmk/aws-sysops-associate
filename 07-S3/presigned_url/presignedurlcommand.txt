@@ -1,6 +1,6 @@
 # Command to generate a presigned URL
 
-# Fast Expiry
+# Fast Expiry (180 secods)
 aws s3 presign s3://animals4lifemedia1337/all5.jpg --expires-in 180 --profile REPLACEME_PROFILENAME
 
 # Expiry in 1 week

@@ -1,0 +1,33 @@
+# Debugging EC2 instance for cloudformation logs:
+
+$ cd /var/log
+$ cat file_name.log
+$ cd log
+$ tail -f file_name.log
+
+# To create a cloudformation one CLick Deployment
+
+Theory about how to create:
+- https://aws.amazon.com/es/blogs/apn/new-aws-cloudformation-stack-quick-create-links-further-simplify-customer-onboarding/
+
+EXAMPLES:
+- https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/quickcreate?templateURL=https://learn-cantrill-labs.s3.amazonaws.com/awscoursedemos/0021-aws-associate-cloudformation-custom-resources/basicS3bucket.yaml&stackName=S3BUCKETNORMAL
+
+- https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://learn-cantrill-labs.s3.amazonaws.com/awscoursedemos/0021-aws-associate-cloudformation-custom-resources/basicS3bucket.yaml&stackName=S3BUCKETNORMAL
+- https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks/create/review?templateURL=https://s3-us-west-2.amazonaws.com/isco/wizard.yml&stackName=CrossAccountRoleSetup&param_TrustedAccount=123456789012&param_ExternalId=abcd1234
+
+######## LINUX ONLY ############3
+# TEST SSH AGENT EXIST IN YOUR OS
+- $ eval 'ssh-agent'
+# START SSH AGENT
+- $ eval `ssh-agent -s`
+# ADD private key to the SSH AGENT
+- $ ssh-add ./A4L.pem
+# AGENT CONNECTION (BASTION)
+- $ ssh -A -i "A4L.pem" ec2-user@ec2-52-15-228-61.us-east-2.compute.amazonaws.com
+# AGENT CONNECTION (PRIVATE INSTANCE)
+- ssh -i "A4L.pem" ec2-user@10.16.96.57
+
+
+- CAN BE DONE WITH PUTTY. CHeck out the course:
+    + [SAAC02SHARED] [DEMO] [SETUP] Implementing private internet access using NAT Gateways - PART1
