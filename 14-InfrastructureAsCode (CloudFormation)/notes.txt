@@ -26,7 +26,7 @@ EXAMPLES:
 # AGENT CONNECTION (BASTION)
 - $ ssh -A -i "A4L.pem" ec2-user@ec2-52-15-228-61.us-east-2.compute.amazonaws.com
 # AGENT CONNECTION (PRIVATE INSTANCE)
-- ssh -i "A4L.pem" ec2-user@10.16.96.57
+- $ ssh ec2-user@10.16.96.57
 
 
 - CAN BE DONE WITH PUTTY. CHeck out the course:
